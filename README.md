@@ -8,3 +8,4 @@ The purpose of this tool is to act as a quick and easy way to generate FAQ schem
 - N/A
 
 ## View Project
+- https://tingen-law.github.io/faq-schema-generator/
