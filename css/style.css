@@ -60,6 +60,17 @@ button {
     background-color: var(--calculator);
 }
 
+.menu {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1em;
+}
+
+.faq-entry {
+    padding: 2em 1em;
+}
+
 /*** Button Specific Styles *********************/
 .button {
     padding: 1em 1.4em;
