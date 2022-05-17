@@ -6,11 +6,15 @@
 let faqCount = 1;
 
 // Add the event listener constants.
-const newRow = document.getElementById('form');
+const newRowButton = document.getElementById('newRow');
+const submitButton = document.getElementById('submit');
+const form = document.getElementById('form');
+const newEntry = document.createElement('div');
 
 // Function to create a new row and insert it into the document.
 function createNewRow() {
-    newRow.innerHTML += `
+    newEntry.innerHTML +=
+    `
     <div class="faq-entry">
         <div>
             <label for="faqQuestion${faqCount}">Question ${faqCount}</label>
@@ -22,7 +26,14 @@ function createNewRow() {
         </div>
     </div>
     `
+
+    form.appendChild(newEntry);
     faqCount = faqCount + 1;
 }
 
-newRow.addEventListener('click', createNewRow);
+function submitEntries() {
+    console.log('submit');
+}
+
+newRowButton.addEventListener('click', createNewRow);
+submitButton.addEventListener('click', submitEntries);
