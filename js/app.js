@@ -32,7 +32,9 @@ function createNewRow() {
 }
 
 function submitEntries() {
-    console.log('submit');
+    for (var i = 1; i < faqCount; i++) {
+        console.log(document.getElementById(`faqQuestion${i}`).value);
+    }
 }
 
 newRowButton.addEventListener('click', createNewRow);
