@@ -11,9 +11,11 @@ let jsonScript = '';
 // Add the event listener constants.
 const newRowButton = document.getElementById('newRow');
 const submitButton = document.getElementById('submit');
+const resetButton = document.getElementById('reset');
 const form = document.getElementById('form');
 const newEntry = document.createElement('div');
 const solution = document.getElementById('solution');
+const app = document.getElementById('app');
 
 // Function to create a new row and insert it into the document.
 function createNewRow() {
@@ -91,8 +93,21 @@ function createScript() {
 
     jsonScript = `<textarea rows="${10 + (10 * (faqCount - 1))}" cols="60">` + jsonScript + `</textarea>`
     solution.innerHTML = `<div class="output">` + jsonScript + `</div>`;
+    form.innerHTML = '';
+}
+
+function resetPage() {
+    app.innerHTML =
+    `<div class="solution" id="solution"></div>
+    <form class="faq-form" id="form" action="index.html" method="post">
+        <div class="menu">
+            <button class="button red" id="newRow" type="button" name="newRow">Add New Row</button>
+            <button class="button blue" id="submit" type="button" name="submit">Submit</button>
+        </div>
+    </form>`
 }
 
 // Event Listeners for the buttons.
 newRowButton.addEventListener('click', createNewRow);
 submitButton.addEventListener('click', createScript);
+resetButton.addEventListener('click', resetPage);
